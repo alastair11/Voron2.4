@@ -30,6 +30,14 @@ trusted_clients =
 
 [history]
 
+[timelapse]
+variable_fps = True
+parkhead = False
+parkpos = front_right
+flip_x = True
+flip_y = True
+targetlength = 360
+
 [update_manager]
 refresh_interval = 168
 
@@ -46,4 +54,11 @@ env = ~/.KlipperScreen-env/bin/python
 requirements = scripts/KlipperScreen-requirements.txt
 install_script = scripts/KlipperScreen-install.sh
 managed_services = KlipperScreen
+
+[update_manager timelapse]
+type = git_repo
+primary_branch = main
+path = ~/moonraker-timelapse
+origin = https://github.com/mainsail-crew/moonraker-timelapse.git
+managed_services = klipper moonraker
 
